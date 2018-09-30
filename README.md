@@ -1,2 +1,2 @@
-# Fixtitute
+# Fixtitute - Institute's Fixtures
 Event organising system
