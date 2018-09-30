@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+.body{
+  	 
+  	text-align: center;
+}
+.top_bar{
+	position:fixed;
+	top:0px;
+	left: 0px;
+	height: 50px; 	
+	background-color: #5D6D7E;
+	width:100%;
+	z-index:10;
+	
+
+
+}
+.field{
+	position: absolute;
+	top:100px;
+	width:400px;
+	background-color: #F5F5F5;
+	left:0px;
+	height: 100%;
+	width: 100vw;
+
+}
+#logo{
+	position: absolute;
+	top:10px;
+	left:50px;
+	height:40px;
+	width: auto;
+}
+#logo img{
+	height:100%;
+	width:auto;
+}
+
+@media screen and (min-width: 767px)
+{
+	.login_box,.signup_box{
+		position: absolute;
+		background: #F5F5F5;
+		padding: 20px 0px 10px 30px;
+		top:100px;
+		border-left: 1px #C7C7C7;
+		right: 400px;
+		width:400px;
+		height: auto;
+		color: #4e5053;
+		font:16px arial;
+		display: inline-block;
+
+	}
+	
+}
+@media screen and (max-width: 767px)
+{
+	.login_box,.signup_box{
+		position: absolute;
+		background: #F5F5F5;
+		padding: 20px 0px 10px 30px;
+		top:100px;
+		border-left: 1px #C7C7C7;
+		right: 400px;
+		width:400px;
+		height: auto;
+		color: #4e5053;
+		font:16px arial;
+		display: inline-block;
+
+	}
+	
+}
+input[type=text],input[type=password],select,option{
+	margin-top:20px;
+	margin-right: 100px;
+	border:1px solid #B9B9B9;
+	background-color: #F5F5F5;
+	width: 300px;
+	color: #0F1626;
+	font:17px helvetica;
+	padding: 5px 10px;
+	box-sizing:  border-box;
+	border-radius: 2px;
+	outline: none;
+}
+.login-button{
+	background-color: #E74C3C;
+	border: 1px solid #E74C3C;
+	width: 300px;
+	margin-top: 20px;
+	padding: 7px 10px;
+	font: 20px helvetica;
+	color: white;
+	cursor: pointer;
+	outline: none; 
+	box-sizing: border-box;
+	border-radius: 5px;
+}
+.login-button:hover{
+	opacity: .8;
+}
+.sign_up{
+	font:20px arial;
+	cursor: pointer;
+	margin-bottom: 0px;
+
+}
+
+</style>
+<body>
+	<div class="top_bar">
+		<div id="logo" >
+			<img src="fixtitute.png">
+		</div>
+	</div>
+	<div class="field">
+<div class="signup_box">
+		<span class="new-id">New Account</span>
+		<br>
+		<input type="text" name="first-name" id="first_name" placeholder="First Name">
+		<input type="text" name="last-name" id="last_name" placeholder="Last Name">
+		<input type="text" name="email-address" id="email_add" placeholder="Institue Email">
+		<select >
+			<option>Student</option>
+			<option>Faculty</option>
+			<option>Staff</option>
+			<option disabled="true" selected="true">Sign Up as</option>
+		</select>
+		<input type="password" name="new_password" placeholder=" New Password">
+		<input type="password" name="repeat_password" placeholder="Repeat Password">
+		<button class="login-button">Sign Up</button>
+	</div>
+	</div>
+</body>
+</html>

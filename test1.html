@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+.body{
+  	 
+  	text-align: center;
+}
+.top_bar{
+	position: fixed;
+	top:0px;
+	left: 0px;
+	height: 60px; 	
+	background-color: #4169E1;
+	width:100%;
+	z-index:10;
+
+
+}
+#logo{
+	position: absolute;
+	top:10px;
+	left:50px;
+	height:40px;
+	width: auto;
+}
+#logo img{
+	height:100%;
+	width:auto;
+}
+.field{
+	position: absolute;
+	top:50px;
+	width:400px;
+	background-color: #F5F5F5;
+	left:0px;
+	height: 90%;
+	width: 100vw;
+
+}
+	.login_box,.signup_box{
+		position: absolute;
+		background: #F5F5F5;
+		padding: 20px 0px 10px 30px;
+		top:50px;
+		border-left: 1px #C7C7C7;
+		right: 450px;
+		width:400px;
+		height: auto;
+		color: #4e5053;
+		font:16px arial;
+		display: inline-block;
+
+	}
+	.signup_box{
+		top:50px;
+		width:500px;
+		display: none;
+		padding-bottom: 20px;
+	}
+	
+input[type=text],input[type=password],select,option{
+	margin-top:20px;
+	margin-right: 100px;
+	border:1px solid #B9B9B9;
+	background-color: #F5F5F5;
+	width: 300px;
+	color: #0F1626;
+	font:17px helvetica;
+	padding: 5px 10px;
+	box-sizing:  border-box;
+	border-radius: 2px;
+	outline: none;
+}
+.login-button{
+	background-color: #E74C3C;
+	border: 1px solid #E74C3C;
+	width: 300px;
+	margin-top: 20px;
+	padding :5px 20px;
+
+	font: 20px helvetica;
+	color: white;
+	cursor: pointer;
+	outline: none; 
+	box-sizing: border-box;
+	border-radius: 5px;
+}
+.login-button:hover{
+	opacity: .8;
+}
+.sign_up{
+	font:20px arial;
+	cursor: pointer;
+	
+
+}
+#sign_in{
+	margin-top:30px;
+
+}
+#log_in{
+     position:relative;
+	font: 30px helvetica;
+	text-align: center;
+
+}
+
+</style>
+<body>
+	<div class="top_bar">
+		<div id="logo" >
+			<img src="fixtitute.png">
+		</div>
+	</div>
+	<div class="field">
+	<div class="login_box" id="login_box">
+		<span id="log_in"> Login</span>
+		<form  method="post" action="log.php">
+		<input type="text" name="username" placeholder="Institue email">
+		<input type="password" name="password" placeholder="Password">
+		<button type="submit" name="submit" class="login-button">Log In
+		</button>
+	</form>
+		<p class="sign_up" id="sign_up"> <b>Sign Up</b></p>
+	</div>
+	
+	<div class="signup_box" id="signup">
+		<form method="post" action="signup.php">
+		<span class="new-id">New Account</span>
+		<br>
+		<input type="text" name="first-name" id="first_name" placeholder="First Name">
+		<input type="text" name="last-name" id="last_name" placeholder="Last Name">
+		<input type="text" name="email-address" id="email_add" placeholder="Institue Email">
+		<div style="width: 350px;margin-top:20px">
+				<input class="checkbox-round" type="radio" name="Participant" value="male">Participant
+				<input class="checkbox-round" type="radio" name="Organiser" value="female">Organiser
+			</div>
+		<!--<select >
+			<option name="Student" value="student">Student</option>
+			<option name="Faculty" value="faculty">Faculty</option>
+			<option name="Staff"value="staff">Staff</option>
+			<option disabled="true" selected="true">Sign Up as</option>
+		</select> -->
+		<input type="password" name="new_password" placeholder=" New Password">
+		<input type="password" name="repeat_password" placeholder="Repeat Password">
+		<button class="login-button">Sign Up</button>
+	   </form>
+	   	   <p class="sign_up" id="sign_in"><b>Sign In</b></p>
+	   	</div>
+
+	
+</div>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" >
+	$("#sign_up").click(function(){
+	$("#login_box").fadeOut(250);
+	$("#signup").fadeIn(250);
+})
+$("#sign_in").click(function(){
+	$("#login_box").fadeIn(250);
+	$("#signup").fadeOut(250);
+})	
+</script>
+</body>
+</html>

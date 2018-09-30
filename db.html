@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<link rel="stylesheet" type="text/css" href="db.css">
+<style type="text/css">
+	*{
+		box-sizing: border-box;
+	}
+	tr,td,table{
+		
+		border:1px solid #BABABA;
+		border-radius: 50px;
+
+	}
+	th,tr,td{
+		padding:5px;
+		text-align: center;
+	}
+	td{
+
+		cursor: pointer;
+	}
+	.db{
+		position: relative;
+	}
+	.db:hover::after{
+	content:  "" attr(data-date) "";
+  	position: absolute;
+  	right: 20px;
+  	top: 20px;
+	border:1px solid black;
+	border-radius: 3px;
+	background: #222222;
+	color:white;
+	font:14px arial;
+	padding:3px 4px;
+	word-break: normal;
+	z-index: 100
+}
+</style>
+<body>
+
+<div class="top">
+	<div id="dashboard_text">Dashboard</div>
+	<div class="dd" id="username_text" style="right:70px;font:16px arial;top: 20px">Anand Ramrakhyani</div>
+	<div class="dd" id="user_menu"><img src="user_icon.png"></div>
+	<div id="menu_dropdown"><b>Log out</b></div>
+</div>
+<div class="left_nav">
+<div id="logo">
+		<img src="fixtitute.png">
+	</div>
+	<div class="nav_buttons" id="home" style="margin-top:70px;border-color: white">
+	<img src="home.png">
+	Home</div>
+	<div class="nav_buttons" id="cal">
+	<img src="cal.png">Events</div>
+	<div class="nav_buttons" id="groups">
+	<img src="group.png">Groups</div>
+</div>
+<div id="right_col">
+	<div class="field" id="groups_rect" style="display: none">
+		<div class="head">Groups</div>
+
+	</div>
+	<div class="field" id="cal_rect" style="display: none">
+		<div>
+			<div class="head" id="event_section_create" >Create Event</div>
+			<div class="head" id="event_section_delete" style="left: 365px;background:white;height:46px;z-index: 11">Delete Event</div>
+			<div class="head" id="event_section_edit" style="left: 725px;">Edit Event</div>
+			<div class="head" id="create_event" style="display: none;">
+				<form name="add_event" action=" " onsubmit="return validateForm()" method="post">
+					<div class="add_element" id="name_create">
+						Event Name : <input type="text" name="e_name_add" class="input_create">
+					</div>
+					<div class="add_element" id="date_create">
+						Date : <input type="date" name="e_date_add" class="input_create">
+					</div>
+					
+						<div class="add_element" id="stime_create" style="display: inline-block;">
+							Start Time : <input type="time" name="st_c_time" class="input_create">
+						</div>
+						<div class="add_element" id="endtime_create" style="position: absolute; left: 520px; display: inline-block;">
+							End Time : <input type="time" name="end_c_time" class="input_create">
+						</div>
+					
+
+					<div class="add_element" id="venue_create">
+				    	<label>Venue : </label>
+				    	<select class="input_create">
+				    		
+				    		   <option value="a1_nkn">A1 1a</option>
+				    		   <option value="nkn">A1-2a</option>
+					    		<option value="a1_3">A1-3</option>
+					    		<option value="a1_2a">A1-Nkn</option>
+			   		    	    <option value="D1_Lounge">D1 Lounge</option>
+					    		<option value="Hostel" id="Hostel_B1">Hostel Common Room(B1)</option>
+					    	    <option value="B1">B1</option>
+					    		<option value="B6">B6</option>
+					    		<option value="B7">B7</option>
+			   		    </select>
+		        	</div>
+		        	<div class="add_element" id="desc_create">
+		        		Description (optional): <input type="text" name="desc-add" class="input_create">
+		        	</div>
+		        	<input type="submit" name="submit_create" class="add_element">
+
+				</form>
+			</div>
+
+			<div class="head" id="delete_event"  >
+				<div id="list_eventorganiser">
+					List of Events
+					<?php
+					
+					?>
+				</div>
+				<div id="delete_eventorganiser">
+					<div class="del_bar" style="margin-top:10px;" id="del_bar_id">Event id</div>
+					<div class="del_bar" style="margin-top:6px;" >
+						<input id="del_bar_input" type="text" name="eventid_delete">
+					</div>
+					<div class="del_bar" style="margin-top:8px;">
+						<input id="del_bar_submit" type="submit" name="del_event">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="field" id="home_rect" style="display: block;">
+		
+		<!---->
+		<div id="up_events_wrap">
+			<div class="head" >Upcoming Events
+			<span style="margin-left: 10px;font-size: 12px">[ Sorted by Date ]</span></div>
+			<div class="b_body" style="background: white;height: 300px;margin-left: 10px"></div>
+		</div>
+
+		<!---->
+		<div style="background:white;padding: 10px;position: absolute;right:20px;top:20px;font:15px arial;border:1px solid #BABABA;border-top:2px solid #FF6E6E;
+	border-radius: 3px;">
+	<table id="table1" style="border:0px">
+	<tr>
+		<td colspan="7" id="month_view" style="border:0px">July</td>
+	</tr>
+	<tr style="color:grey">
+		<th>Sun</th>
+		<th>Mon</th>
+		<th>Tue</th>
+		<th>Wed</th>
+		<th>thu</th>
+		<th>Fri</th>
+		<th>Sat</th>
+	</tr>
+	
+</table>
+</div>
+<div id="display_events" style="text-align: center;width:300px;position: absolute;right:20px;top:20px;height:auto;border:1px solid #BABABA;border-top:2px solid #FF6E6E;
+	border-radius: 3px;background: #F5F5F5;display: none;font-family: arial">
+	<div id="eventscontClose" style="position: absolute;top:5px;right: 10px;font:25px arial;cursor: pointer;">X</div>
+	<span style="font:16px arial;color:grey;">List of Events</span>
+	<div style="width:288px;margin:5px;background: white;min-height: 450px;padding: 5px;">
+		<p style="font-size: 15px;color:#339A21" id="date_show"></p>
+	<p style="font:14px arial">No Events today</p>
+	</div>
+	
+	
+
+</div>
+		<!---->
+	</div>
+</div>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".nav_buttons").click(function(){
+
+			var temp= $(this).attr("id");
+			
+			var id='#'+temp+'_rect';
+			$('.nav_buttons').css({borderColor:"#26303E"});
+			$(this).css({borderColor:"white"})
+			//alert(id);
+			$(".field").hide();
+			var selected_el=$(id);
+			selected_el.show();
+		});
+		$(".dd").click(function(){
+			$("#menu_dropdown").toggle()
+		})
+	})
+</script>
+<script type="text/javascript">
+
+	function getDayPos(day){
+		var days=['sun','mon','tue','wed','thu','fri','sat'],
+		lower_day=day.toLowerCase();
+		for(l=0;l<7;++l){
+			if(lower_day==days[l]){
+
+			return l;
+			}
+		}
+	}
+	$(document).ready(function(){
+		var calvalues="",
+		 date_val=0,
+		 d= new Date(),
+		 date_str=d.toDateString(),
+		 day_array=date_str.split(" "),
+		 today=day_array['2'],
+		 today_row=parseInt(today/7),
+		 today_col=today-(today_row*7),
+		 day_pos=getDayPos(day_array['0']),
+		 dateStartPoint=day_pos - (today_col -1);
+		 if(dateStartPoint<0){
+		 	dateStartPoint+=7;
+		 }
+		 var hu = dateStartPoint/7 + today/7,
+		 today_row2=parseInt( hu );
+
+
+		for(j=0;j>-1;++j){
+			calvalues+="<tr>";
+			if(date_val>=31)
+				break;
+			for(i=0;i<7;++i){
+				if(date_val>=31)
+					break;
+				if(j==0 && i<dateStartPoint){
+					date_val+=0;
+				}else{
+					date_val+=1;
+				}
+				
+				if(i==day_pos && j==today_row2){
+					if(date_val==0){
+						calvalues+='<td data-date=""> </td>';
+					}
+					else{
+						calvalues+='<td class="db" data-date="'+date_val+'/'+day_array['1']+'/'+day_array['3']+'" style="background:#86D8B0;border-color:#86D8B0">'+date_val+'</td>';
+					}
+				}
+				else{
+					if(date_val==0){
+						calvalues+='<td data-date="" style="border:0px;cursor:auto"> </td>';
+					}else{
+						calvalues+='<td class="db" data-date="'+date_val+'/'+day_array['1']+'/'+day_array['3']+'">'+date_val+'</td>';
+					}
+				}
+				
+			}
+			calvalues+='</tr>'
+		}
+		$("#month_view").html(day_array['1'])
+		//alert(day_array['1']);
+		$("#table1").append(calvalues);
+
+		$("td").on("click",function(){
+			var data_date=$(this).attr("data-date");
+			//alert(data_date);
+			if(data_date!='' && $(this).attr("id")!='month_view'){
+				$("#display_events").show();
+				$("#date_show").html(data_date);
+			}
+		})
+		$("#eventscontClose").click(function(){
+			$("#display_events").hide();
+		})
+	})
+	
+</script>
+</body>
+</html>

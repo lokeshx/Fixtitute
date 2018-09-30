@@ -1,0 +1,258 @@
+.top{
+	position:fixed;
+	width:100%;
+	height:60px;
+	top:0;
+	left:0;
+	border-bottom: 0px solid #889FB2;
+	background:#4169E1;
+	box-shadow: 100px 0px 15px 	#191970;
+	z-index: 10;
+}
+.left_nav{
+	width:250px;
+	height:100%;
+	position: fixed;
+	top:0;
+	left:0;
+	
+	background:#C0392B;
+	z-index: 20
+}
+#logo{
+	position: absolute;
+	top:20px;
+	left:50px;
+	height:40px;
+	width: auto;
+}
+#dashboard_text{
+	position: absolute;
+	top:20px;
+	left:265px;
+	height:40px;
+	width: auto;
+	font:20px arial;
+	color:white;
+}
+#user_menu,#username_text{
+	position: absolute;
+	top:10px;
+	right: 20px;
+	height:40px;
+	width: auto;
+	font:20px arial;
+	color:white;
+	cursor: pointer;
+}
+#user_menu img{
+	height:40px;
+	width:40px;
+}
+#menu_dropdown{
+	position:absolute;
+	top:50px;
+	right: 15px;
+	width: 120px;
+	padding:7px;
+	background: white; 
+	z-index: 100;
+	border-radius: 3px;
+	border:1px solid #91959A;
+	color:grey;
+	font:16px arial;
+	text-align: center;
+	cursor: pointer;
+	display: none
+
+}
+#menu_dropdown:hover{
+	background: #26303E;
+	color:white;
+}
+#logo img{
+	height:100%;
+	width:auto;
+}
+.nav_buttons{
+	padding:10px 15px;
+	width:250px;
+	font:17px arial;
+	display: inline-block;
+	border-left:2px solid #26303E;
+	position: relative;
+	color:white;
+	cursor:pointer;
+	box-sizing: border-box;
+	transition: .3s;
+}
+.nav_buttons:hover{
+	background:#1B2431; 
+}
+.nav_buttons img{
+	height:30px;
+	width:30px;
+	margin-right: 10px;
+	vertical-align: middle;
+	display: inline-block;
+}
+#right_col{
+	width:calc(100% - 250px);
+	background:#DDE2E8;
+	position:fixed;
+	top:60px;
+	left:250px;
+	height:calc(100% - 70px);
+}
+.head,.head2,.head_butt,.b_body,.head_butt_g{
+	font:16px arial;
+	box-sizing: border-box;
+	width:calc(100% - 20px);
+	margin-left: 15px;
+	padding:5px 10px;
+	color:grey;
+}
+
+.head_g
+{
+	overflow-y: scroll;
+}
+#up_events_wrap{
+	position: absolute;
+	top:20px;
+	left:10px;
+	width:calc(100% - 330px);
+	background:#F5F5F5;
+	height:calc(100% - 10px);
+	border:1px solid #E0DFDF;
+	border-radius: 3px;
+	display: inline-block;
+	border-top:2px solid #FF6E6E;
+	padding-bottom: 10px;
+	overflow-y: scroll;
+}
+#event_section_create,#event_section_delete,#event_section_edit,#group_section_create,#group_section_edit,#my_groups,#venue_section_create,#util_event,#venue_section_edit
+{
+	padding-top: 10px;
+	position: absolute;
+	left: 5px;
+	top: 15px;
+	width: 355px;
+	height: 40px;
+	background-color: #C0392B;
+	text-align: center;
+	cursor: pointer;
+	border:1px solid #C0392B;
+	border-bottom: 0px;
+	color:white;
+}
+
+#create_event,#delete_event,#create_group,#edit_group,#venue_all,#venue_all_sep,#util_all_sep
+{
+	position: absolute;
+	background-color: white;
+	border: 1px solid grey ;
+	top: 60px;
+	width: 1075px;
+	margin-left: 20px;
+	height: 500px;
+}
+#delete_event{
+	z-index: 10;
+}
+.add_element
+{
+	margin-left: 10px;
+	display: block;
+	height: 40px;
+	border: 1px solid #dfdfdf;
+	width: 500px;
+	margin-top: 10px;
+	padding-top: 7px;
+	padding-left: 10px;
+	font-family:arial;
+}
+.input_create
+{
+	position: absolute;
+	left: 200px;
+	width:200px;
+	padding:3px 10px;
+	vertical-align: top
+
+}
+#list_eventorganiser
+{
+	position: absolute;
+	top: 20px;
+	border: 1px solid grey;
+	width: 1000px;
+	margin-left: 25px;
+	height: 370px;
+	text-align: center;	
+	display: block;
+	overflow-y: scroll;
+}
+#delete_eventorganiser
+{
+	position: absolute;
+	top: 420px;
+	margin-left: 75px;
+	display: block;
+	height: 50px;
+	width: 900px;	
+	border: 1px solid grey;
+}
+.e_delete{
+	padding:4px 10px;
+	background-color:#d5494b;
+	border-radius: 3px;
+	color: white;
+	font:14px arial;
+	border: 0;
+	cursor: pointer;
+}
+a{
+	text-decoration: none;
+}
+#del_bar_id
+{
+	position:absolute;
+	left: 50px;
+	font-size: 20px;
+}
+#del_bar_input
+{
+	position: absolute;
+	left: 300px;
+	width: 300px; 
+	height: 35px;
+}
+#del_bar_submit
+{
+	position: absolute;
+	left: 700px;
+	height: 30px;
+	width: 80px;
+}
+.group_list{
+	padding: 10px;
+	width:600px;
+	display: inline-block;
+	font:16px arial;
+}
+.group_list:hover{
+	background: #f0e8e9;
+}
+.edit_button{
+	background: #5daf7b;
+	border:0;
+	color:white;
+	font-family: arial;
+	padding: 4px 10px;
+	float:right;
+	cursor: pointer;
+}
+.red{
+	background: #af2a2a;
+}
